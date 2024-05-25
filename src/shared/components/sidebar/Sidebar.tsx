@@ -1,7 +1,35 @@
-import { Avatar, Box, Divider, Drawer, List, useMediaQuery, useTheme } from '@mui/material';
+import { Avatar, Box, Divider, Drawer, List, useMediaQuery, useTheme, ListItemButton, ListItemIcon, Icon, ListItemText } from '@mui/material';
 import { ReactNode } from 'react';
-import { SidebarItem } from './SidebarItem';
-import { useDrawerContext } from '../../contexts';
+import { useAppThemeContext, useDrawerContext } from '../../contexts';
+import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
+
+interface IListItemLinkProps {
+  to: string;
+  icon: string;
+  label: string;
+  onClick: (() => void) | undefined;
+}
+
+const ListItemLink: React.FC<IListItemLinkProps> = ({ to, icon, label, onClick }) => {
+  const navigate = useNavigate();
+
+  const resolvedPath = useResolvedPath(to);
+  const match = useMatch({ path: resolvedPath.pathname, end: false });
+
+  const handleClick = () => {
+    navigate(to);
+    onClick?.();
+  }
+
+  return (
+    <ListItemButton selected={!!match} onClick={handleClick}>
+      <ListItemIcon>
+        <Icon>{icon}</Icon>
+      </ListItemIcon>
+      <ListItemText primary={label} />
+    </ListItemButton>
+  )
+}
 
 interface ISidebarProps {
   children: ReactNode;
@@ -11,7 +39,8 @@ export const Sidebar: React.FC<ISidebarProps> = ({ children }) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const { isDrawerOpen, toggleDrawerOpen } = useDrawerContext();
+  const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
+  const { toggleTheme, themeName } = useAppThemeContext();
 
   return (
     <>
@@ -28,7 +57,26 @@ export const Sidebar: React.FC<ISidebarProps> = ({ children }) => {
 
           <Box flex={1}>
             <List component='nav'>
-              <SidebarItem name='Home' icon='home' />
+              {drawerOptions.map(drawerOption => (
+                <ListItemLink
+                  key={drawerOption.path}
+                  to={drawerOption.path}
+                  icon={drawerOption.icon}
+                  label={drawerOption.label}
+                  onClick={smDown ? toggleDrawerOpen : undefined}
+                />
+              ))}
+            </List>
+          </Box>
+
+          <Box>
+            <List component='nav'>
+              <ListItemButton onClick={toggleTheme}>
+                <ListItemIcon>
+                <Icon>{themeName === 'dark' ? 'light_mode' : 'dark_mode'}</Icon>
+                </ListItemIcon>
+                <ListItemText primary={themeName === 'dark' ? 'Dark Mode' : 'Light Mode'} />
+              </ListItemButton>
             </List>
           </Box>
         </Box>
