@@ -4,6 +4,7 @@ interface IListingToolsProps {
   searchText?: string;
   showSearchInput?: boolean;
   onChangeSearchText?: (newText: string) => void;
+
   newButtonText?: string;
   showNewButton?: boolean;
   onClickNewButton?: () => void;
@@ -13,6 +14,7 @@ export const ListingTools: React.FC<IListingToolsProps> = ({
   searchText = '',
   showSearchInput = false,
   onChangeSearchText: changeSearchText,
+  
   newButtonText = 'New',
   showNewButton = true,
   onClickNewButton: onClickNew
