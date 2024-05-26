@@ -75,7 +75,7 @@ export const Sidebar: React.FC<ISidebarProps> = ({ children }) => {
                 <ListItemIcon>
                 <Icon>{themeName === 'dark' ? 'light_mode' : 'dark_mode'}</Icon>
                 </ListItemIcon>
-                <ListItemText primary={themeName === 'dark' ? 'Dark Mode' : 'Light Mode'} />
+                <ListItemText primary={themeName === 'dark' ? 'Light Mode' : 'Dark Mode'} />
               </ListItemButton>
             </List>
           </Box>

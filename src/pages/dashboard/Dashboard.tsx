@@ -1,4 +1,4 @@
-import { Toolbar } from "../../shared/components";
+import { ListingTools } from "../../shared/components";
 import { PageLayout } from "../../shared/layouts";
 
 
@@ -7,7 +7,7 @@ export const Dashboard = () => {
     <PageLayout
       title='Dashboard'
       toolbar={(
-        <Toolbar
+        <ListingTools
           showSearchInput
         />
       )}
