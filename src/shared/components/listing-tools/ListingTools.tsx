@@ -1,4 +1,14 @@
-import { Box, Button, Icon, InputAdornment, Paper, TextField, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Icon,
+  InputAdornment,
+  Paper,
+  TextField,
+  useTheme,
+} from '@mui/material';
+
+import { Environment } from '../../environment';
 
 interface IListingToolsProps {
   searchText?: string;
@@ -14,10 +24,10 @@ export const ListingTools: React.FC<IListingToolsProps> = ({
   searchText = '',
   showSearchInput = false,
   onChangeSearchText: changeSearchText,
-  
+
   newButtonText = 'New',
   showNewButton = true,
-  onClickNewButton: onClickNew
+  onClickNewButton: onClickNew,
 }) => {
   const theme = useTheme();
 
@@ -39,15 +49,15 @@ export const ListingTools: React.FC<IListingToolsProps> = ({
               <InputAdornment position='end'>
                 <Icon>search</Icon>
               </InputAdornment>
-            )
+            ),
           }}
           size='small'
-          placeholder='Search...'  
+          placeholder={Environment.SEARCH_INPUT}
           value={searchText}
           onChange={(e) => changeSearchText?.(e.target.value)}
         />
       )}
-      
+
       <Box flex={1} display='flex' justifyContent='end'>
         {showNewButton && (
           <Button
@@ -63,4 +73,4 @@ export const ListingTools: React.FC<IListingToolsProps> = ({
       </Box>
     </Box>
   );
-}
+};
