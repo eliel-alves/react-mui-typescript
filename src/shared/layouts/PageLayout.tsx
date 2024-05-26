@@ -14,9 +14,9 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({ children, title, toolba
   const theme = useTheme();
   const { toggleDrawerOpen } = useDrawerContext();
 
-  return(
+  return (
     <Box height='100%' display='flex' flexDirection='column' gap={1}>
-      <Box padding={1} display='flex' alignItems='center' gap={1} height={theme.spacing(smDown ? 6 : mdDown ? 8 : 12)}>
+      <Box padding={4} display='flex' alignItems='center' gap={1} height={theme.spacing(smDown ? 4 : mdDown ? 6 : 10)}>
         {smDown && (
           <IconButton onClick={toggleDrawerOpen}>
             <Icon>menu</Icon>
