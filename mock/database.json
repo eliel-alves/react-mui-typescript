@@ -1,3 +1,82 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "3",
+      "fullName": "Pedro",
+      "email": "pedro@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "4",
+      "fullName": "Carlos",
+      "email": "carlos@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "5",
+      "fullName": "Eliel",
+      "email": "eliel@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "6",
+      "fullName": "Zezin",
+      "email": "zezin@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "7",
+      "fullName": "Fernando",
+      "email": "ferando@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "8",
+      "fullName": "Márcia",
+      "email": "marcia@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "9",
+      "fullName": "Felipe",
+      "email": "felipe@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "10",
+      "fullName": "Carla",
+      "email": "carla@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "11",
+      "fullName": "Samuel",
+      "email": "samuel@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "12",
+      "fullName": "Danilo",
+      "email": "danilo@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "13",
+      "fullName": "João",
+      "email": "joao@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "14",
+      "fullName": "Cristina",
+      "email": "cristina@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "15",
+      "fullName": "Josiane",
+      "email": "josiane@gmail.com",
+      "cityId": "1"
+    }
+  ]
 }
