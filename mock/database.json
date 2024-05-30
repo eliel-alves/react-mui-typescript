@@ -2,20 +2,20 @@
   "users": [
     {
       "id": "3",
-      "fullName": "Pedro",
+      "fullName": "Pedrinho",
       "email": "pedro@gmail.com",
       "cityId": "1"
     },
     {
       "id": "4",
-      "fullName": "Carlos",
+      "fullName": "Carlos Vitor",
       "email": "carlos@gmail.com",
       "cityId": "1"
     },
     {
       "id": "5",
-      "fullName": "Eliel",
-      "email": "eliel@gmail.com",
+      "fullName": "Eliel Alves",
+      "email": "elielalves.dev@gmail.com",
       "cityId": "1"
     },
     {
@@ -76,6 +76,18 @@
       "id": "15",
       "fullName": "Josiane",
       "email": "josiane@gmail.com",
+      "cityId": "1"
+    },
+    {
+      "id": "Och6C5a",
+      "fullName": "Josefino",
+      "email": "josefino@gmail.com",
+      "cityId": "4"
+    },
+    {
+      "id": "cqeXSbA",
+      "fullName": "Jorginho Ferreira",
+      "email": "jorginho@gmail.com",
       "cityId": "1"
     }
   ]
