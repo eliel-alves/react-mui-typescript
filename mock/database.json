@@ -140,5 +140,8 @@
       "name": "Rio de Janeiro",
       "id": "JahKR12"
     }
-  ]
+  ],
+  "auth": {
+    "accessToken": "aaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbb.cccccccccccccc"
+  }
 }
