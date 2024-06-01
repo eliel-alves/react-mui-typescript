@@ -16,20 +16,20 @@ import {
 } from '@mui/material';
 
 import {
-  UsersService,
-  IUserList,
-} from '../../shared/services/api/users/UsersService';
+  CitiesService,
+  ICityList,
+} from '../../shared/services/api/cities/CitiesService';
 import { ListingTools } from '../../shared/components';
 import { PageLayout } from '../../shared/layouts';
 import { useDebounce } from '../../shared/hooks';
 import { Environment } from '../../shared/environment';
 
-export const UsersList: React.FC = () => {
+export const CitiesList: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { debounce } = useDebounce();
   const navigate = useNavigate();
 
-  const [rows, setRows] = useState<IUserList[]>([]);
+  const [rows, setRows] = useState<ICityList[]>([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -45,7 +45,7 @@ export const UsersList: React.FC = () => {
     setIsLoading(true);
 
     debounce(() => {
-      UsersService.getAll(page, search).then((result) => {
+      CitiesService.getAll(page, search).then((result) => {
         setIsLoading(false);
 
         if (result instanceof Error) {
@@ -62,7 +62,7 @@ export const UsersList: React.FC = () => {
 
   const handleDelete = (id: string) => {
     if (window.confirm('Do you really want to delete?')) {
-      UsersService.deleteById(id).then((result) => {
+      CitiesService.deleteById(id).then((result) => {
         if (result instanceof Error) {
           alert(result.message);
         } else {
@@ -77,13 +77,13 @@ export const UsersList: React.FC = () => {
 
   return (
     <PageLayout
-      title='Users List'
+      title='Cities List'
       toolbar={
         <ListingTools
           showSearchInput
           searchText={search}
-          newButtonText='New User'
-          onClickNewButton={() => navigate('/users/edit/new')}
+          newButtonText='New City'
+          onClickNewButton={() => navigate('/cities/edit/new')}
           onChangeSearchText={(text) =>
             setSearchParams({ search: text, page: '1' }, { replace: true })
           }
@@ -99,8 +99,7 @@ export const UsersList: React.FC = () => {
           <TableHead>
             <TableRow>
               <TableCell width={100}>Actions</TableCell>
-              <TableCell>Full Name</TableCell>
-              <TableCell>Email</TableCell>
+              <TableCell>Name</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -110,12 +109,11 @@ export const UsersList: React.FC = () => {
                   <IconButton size='small' onClick={() => handleDelete(row.id)}>
                     <Icon>delete</Icon>
                   </IconButton>
-                  <IconButton size='small' onClick={() => navigate(`/users/edit/${row.id}`)}>
+                  <IconButton size='small' onClick={() => navigate(`/cities/edit/${row.id}`)}>
                     <Icon>edit</Icon>
                   </IconButton>
                 </TableCell>
-                <TableCell>{row.fullName}</TableCell>
-                <TableCell>{row.email}</TableCell>
+                <TableCell>{row.name}</TableCell>
               </TableRow>
             ))}
           </TableBody>

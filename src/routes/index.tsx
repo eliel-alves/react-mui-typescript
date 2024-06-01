@@ -5,6 +5,8 @@ import { useDrawerContext } from '../shared/contexts';
 import {
   UsersList,
   UsersEdit,
+  CitiesList,
+  CitiesEdit,
   Dashboard
 } from '../pages';
 
@@ -17,6 +19,11 @@ export const AppRoutes = () => {
         icon: 'dashboard',
         path: '/dashboard',
         label: 'Dashboard'
+      },
+      {
+        icon: 'location_city',
+        path: '/cities',
+        label: 'Cities'
       },
       {
         icon: 'people',
@@ -32,6 +39,9 @@ export const AppRoutes = () => {
 
       <Route path='/users' element={<UsersList />} />
       <Route path='/users/edit/:id' element={<UsersEdit />} />
+
+      <Route path='/cities' element={<CitiesList />} />
+      <Route path='/cities/edit/:id' element={<CitiesEdit />} />
 
       <Route path='*' element={<Navigate to='/dashboard' />} />
     </Routes>

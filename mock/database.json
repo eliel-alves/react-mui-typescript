@@ -90,5 +90,55 @@
       "email": "jorginho@gmail.com",
       "cityId": "1"
     }
+  ],
+  "cities": [
+    {
+      "id": "1",
+      "name": "Goiás"
+    },
+    {
+      "name": "Porto Alegre",
+      "id": "2"
+    },
+    {
+      "name": "Goiânia",
+      "id": "3cBHspo"
+    },
+    {
+      "name": "Marília",
+      "id": "9Zkf7eq"
+    },
+    {
+      "name": "Passo Fundo",
+      "id": "4ecgxRI"
+    },
+    {
+      "name": "Carazinho",
+      "id": "bNhZcYp"
+    },
+    {
+      "name": "Marau",
+      "id": "WBqnRmv"
+    },
+    {
+      "name": "Mato Castelhano",
+      "id": "0EOUs7W"
+    },
+    {
+      "name": "Ponta Grossa",
+      "id": "sY3AjZX"
+    },
+    {
+      "name": "Florianópolis",
+      "id": "wKk_52c"
+    },
+    {
+      "name": "São Paulo",
+      "id": "Y4JAvfv"
+    },
+    {
+      "name": "Rio de Janeiro",
+      "id": "JahKR12"
+    }
   ]
 }
