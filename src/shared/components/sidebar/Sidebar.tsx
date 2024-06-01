@@ -1,6 +1,6 @@
 import { Avatar, Box, Divider, Drawer, List, useMediaQuery, useTheme, ListItemButton, ListItemIcon, Icon, ListItemText } from '@mui/material';
 import { ReactNode } from 'react';
-import { useAppThemeContext, useDrawerContext } from '../../contexts';
+import { useAppThemeContext, useAuthContext, useDrawerContext } from '../../contexts';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
 interface IListItemLinkProps {
@@ -41,6 +41,7 @@ export const Sidebar: React.FC<ISidebarProps> = ({ children }) => {
 
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
   const { toggleTheme, themeName } = useAppThemeContext();
+  const { logout } = useAuthContext();
 
   return (
     <>
@@ -76,6 +77,12 @@ export const Sidebar: React.FC<ISidebarProps> = ({ children }) => {
                 <Icon>{themeName === 'dark' ? 'light_mode' : 'dark_mode'}</Icon>
                 </ListItemIcon>
                 <ListItemText primary={themeName === 'dark' ? 'Light Mode' : 'Dark Mode'} />
+              </ListItemButton>
+              <ListItemButton onClick={logout}>
+                <ListItemIcon>
+                <Icon>logout</Icon>
+                </ListItemIcon>
+                <ListItemText primary='Logout' />
               </ListItemButton>
             </List>
           </Box>
