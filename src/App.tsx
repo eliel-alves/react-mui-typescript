@@ -1,7 +1,10 @@
 import { BrowserRouter } from 'react-router-dom';
-import { AppRoutes } from './routes';
+
+import './shared/forms/YupTranslate';
+
 import { AppThemeProvider, DrawerProvider } from './shared/contexts';
 import { Sidebar } from './shared/components';
+import { AppRoutes } from './routes';
 
 export const App = () => {
   return (
