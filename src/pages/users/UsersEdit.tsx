@@ -5,6 +5,7 @@ import * as yup from 'yup';
 
 import { VTextField, VForm, useVForm, IVFormErrors } from '../../shared/forms';
 import { UsersService } from '../../shared/services/api/users/UsersService';
+import { AutoCompleteCity } from './components/AutoCompleteCity';
 import { DetailTools } from '../../shared/components';
 import { PageLayout } from '../../shared/layouts';
 
@@ -47,12 +48,14 @@ export const UsersEdit: React.FC = () => {
       formRef.current?.setData({
         fullName: '',
         email: '',
-        cityId: ''
+        cityId: undefined
       });
     }
   }, [id]);
 
   const handleSave = (data: IFormData) => {
+    console.log(data);
+
     formValidationSchema.validate(data, { abortEarly: false })
     .then((validatedData) => {
       setIsLoading(true);
@@ -181,12 +184,7 @@ export const UsersEdit: React.FC = () => {
 
             <Grid container item direction='row' spacing={2}>
               <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
-                <VTextField
-                  fullWidth
-                  label='City'
-                  name='cityId'
-                  disabled={isLoading}
-                />
+                <AutoCompleteCity isExternalLoading={isLoading}/>
               </Grid>
             </Grid>
 
